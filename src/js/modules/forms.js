@@ -1,4 +1,5 @@
 import checkNumInputs from './checkNumInputs'
+import clearState from './clearState'
 
 const forms = (state) => {
     const allForms = document.querySelectorAll('form'),
@@ -50,6 +51,7 @@ const forms = (state) => {
                 .catch(() => statusMessage.textContent = message.failure)
                 .finally(() => {
                     clearInputs()
+                    clearState(state)
                     setTimeout(() => {
                         statusMessage.remove()
                     }, 5000)
